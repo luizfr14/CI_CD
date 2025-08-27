@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1c1c1c, #121212);
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px 15px;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* Cabeçalho */
+header {
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ffb347; /* tom quente dourado */
+  text-shadow: 0 0 8px #ffb347, 0 0 20px #ff7e5f;
+  letter-spacing: 2px;
+  animation: glowPulse 2s infinite alternate;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 12px;
+}
+
+/* Produtos */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  padding: 10px;
+}
+
+/* Card */
+.product-card {
+  background: linear-gradient(145deg, #1e1e1e, #292929);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 15px #ffb347, 0 0 30px rgba(255,126,95,0.7);
+}
+
+.product-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #ffb347;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Botão de compra */
+.btn-buy {
+  display: inline-block;
+  margin-top: 18px;
+  background: linear-gradient(90deg, #ffb347, #ff7e5f);
+  color: #121212;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(255,126,95,0.8);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-buy:hover {
+  background: linear-gradient(90deg, #ffd27f, #ffa07a);
+  box-shadow: 0 0 20px rgba(255,193,118,0.9);
+  transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+  margin-top: 70px;
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+footer p:first-child {
+  color: #ff7e5f;
+  font-weight: bold;
+}
+
+/* Animações */
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px #ffb347, 0 0 20px #ff7e5f; }
+  to   { text-shadow: 0 0 20px #ffb347, 0 0 40px #ff7e5f; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .product-card {
+    padding: 18px;
+  }
+}
